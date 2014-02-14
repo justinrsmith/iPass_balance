@@ -1,0 +1,6 @@
+BeautifulSoup==3.2.1
+httplib2==0.8
+mechanize==0.2.5
+six==1.5.2
+twilio==3.6.5
+wsgiref==0.1.2
