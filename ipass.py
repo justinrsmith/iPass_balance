@@ -4,8 +4,8 @@ from BeautifulSoup import BeautifulSoup
 from twilio.rest import TwilioRestClient
 from twilio.rest import TwilioRestClient
 
-account = "AC9f84eb4a30bd6169fa955c12ac870dc0"
-token   = "940c32386afc339be294d4d019127436"
+account = 'AC9f84eb4a30bd6169fa955c12ac870dc0'
+token   = '940c32386afc339be294d4d019127436'
 client  = TwilioRestClient(account, token)
 
 br = mechanize.Browser()
@@ -37,7 +37,7 @@ soup = BeautifulSoup(page_source)
 td = soup.find('td', {'class':'oracle.jbo.format.DefaultCurrencyFormatter'})
 balance = float(td.renderContents().strip().strip('$'))
 
-if balance < 50:
-    message = client.sms.messages.create(to="***", 
-                                         from_="***", 
-                                         body="Your iPass balance is " + str(balance))
+if balance <= 15:
+    message = client.sms.messages.create(to='***', 
+                                         from_='***', 
+                                         body='Your iPass balance is ' + str(balance))
